@@ -1,1 +1,107 @@
-<p>productivity works!</p>
+<div class="row">
+  <div class="col-xl-12">
+    <app-card cardTitle="Tableau Productivité Community Manager" [options]="false" blockClass="table-border-style">
+      <form (ngSubmit)="onSubmitCM()" class="row row-cols-md-auto g-3 align-items-center m-4">
+        <div class="col-12">
+          <label for="dateDebutCM" class="sr-only">Date de Début:</label>
+          <input type="date" id="dateDebutCM" [(ngModel)]="dateDebutCM" name="dateDebut" required class="form-control"  />
+        </div>
+        <div class="col-12">
+          <label for="dateFinCM" class="sr-only">Date de Fin:</label>
+          <input type="date"  [(ngModel)]="dateFinCM" name="dateFinCM" required class="form-control" id="dateFinCM" />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Charger les données</button>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-styling">
+          <thead>
+          <tr class="table-primary">
+            <th>Nom Prénom</th>
+            <th>Traité FB</th>
+            <th>Traité Msg Instagram</th>
+            <th>Traité Comment Instagram</th>
+            <th>Traité Tiktok</th>
+            <th>Nbr traité T.P Gorgias</th>
+            <th>Nbr traité Yotpo</th>
+            <th>Total traité CM</th>
+            <th>Nombre de jours travaillé</th>
+            <th>Temps estimé en ligne (min)</th>
+            <th>% Occup CM (8h)</th>
+            <th>%|G Total traité CM</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of prodUserCM; let i = index">
+            <td>{{ user['user_name'] }}</td>
+            <td>{{ user['facebook'] }}</td>
+            <td>{{ user['instagram'] }}</td>
+            <td>{{ user['comment_instagram'] }}</td>
+            <td>{{ user['tiktok'] }}</td>
+            <td>{{ user['gorgias'] }}</td>
+            <td>{{ user['yotpo'] }}</td>
+            <td>{{ user['total_CM'] }}</td>
+            <td>{{ user['nbr_days_worked'] }}</td>
+            <td>{{ user['estimated_online_time'] }}</td>
+            <td>{{ user['occupancy_percentage'] | number: '1.0-2' }}%</td>
+            <td>{{ user['total_CM'] | number: '1.0-2' }}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="col-xl-12">
+    <app-card cardTitle="KPI Customer care" [options]="false" blockClass="table-border-style">
+
+      <form (ngSubmit)="onSubmitCustomerCare()" class="row row-cols-md-auto g-3 align-items-center m-4">
+        <div class="col-12">
+          <label for="dateDebut" class="sr-only">Date de Début:</label>
+          <input type="date" id="dateDebut" [(ngModel)]="dateDebut" name="dateDebut" required class="form-control"  />
+        </div>
+        <div class="col-12">
+          <label for="dateFin" class="sr-only">Date de Fin:</label>
+          <input type="date"  [(ngModel)]="dateFin" name="dateFin" required class="form-control" id="dateFin" />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Charger les données</button>
+        </div>
+      </form>
+
+
+
+      <div class="table-responsive">
+        <table class="table table-styling">
+          <thead>
+          <tr class="table-primary">
+            <th>Nom Prénom</th>
+            <th>Traité mail</th>
+            <th>Traité whatsapp</th>
+            <th>Traité chat</th>
+            <th>Total traité Customer Care</th>
+            <th>Nombre de jours travaillé</th>
+            <th>Temps estimé en ligne (min)</th>
+            <th>% Occup CM (8h)</th>
+            <th>%|G Total traité CM</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of prodUserCustomerCare; let i = index">
+            <td>{{ user['user_name'] }}</td>
+            <td>{{ user['mail'] }}</td>
+            <td>{{ user['whatsapp'] }}</td>
+            <td>{{ user['chat'] }}</td>
+            <td>{{ user['total_CM'] }}</td>
+            <td>{{ user['nbr_days_worked'] }}</td>
+            <td>{{ user['estimated_online_time'] }}</td>
+            <td>{{ user['occupancy_percentage'] | number: '1.0-2' }}%</td>
+            <td>{{ user['total_CM'] | number: '1.0-2' }}%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-card>
+  </div>
+</div>

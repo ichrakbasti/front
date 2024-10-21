@@ -57,6 +57,21 @@ export const NavigationItems: NavigationItem[] = [
     children: [
       {
         id: 'dashboard',
+        title: 'Contact Reason',
+        type: 'item',
+        url: '/ContactReason',
+        icon: 'feather icon-home'
+      }
+    ]
+  },
+  {
+    id: 'navigation',
+    title: 'Navigation',
+    type: 'group',
+    icon: 'icon-group',
+    children: [
+      {
+        id: 'dashboard',
         title: 'Dashboard',
         type: 'item',
         url: '/analytics',

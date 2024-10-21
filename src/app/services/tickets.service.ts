@@ -24,4 +24,13 @@ export class TicketsService {
     return this.http.get(`${this.API_URL}/api/dashboard/ticket-total-stats`);
 
   }
+
+  getProductivityCM(body: { start_date: string; end_date: string }) {
+    return this.http.post(`${this.API_URL}/api/productivity/cm`, body);
+  }
+
+  getProductivityCustomerCare(body: { start_date: string; end_date: string }) {
+    return this.http.post(`${this.API_URL}/api/productivity/customer-care`, body);
+  }
+
 }

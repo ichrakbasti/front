@@ -26,6 +26,11 @@ const routes: Routes = [
 
       },
       {
+        path: 'ContactReason',
+        loadComponent: () => import('./projet/contact-reason/contact-reason.component').then(m => m.ContactReasonComponent)
+
+      },
+      {
         path: 'analytics',
         loadComponent: () => import('./projet/dashboard/dash-analytics.component')
       },
