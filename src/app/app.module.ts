@@ -26,9 +26,6 @@ import { SharedModule } from './theme/shared/shared.module';
 import {HttpClientModule, provideHttpClient} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatTreeModule} from "@angular/material/tree";
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -59,10 +56,7 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    MatTreeModule,
-    MatIconModule,
-    MatButtonModule
+    FormsModule
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],
   bootstrap: [AppComponent]

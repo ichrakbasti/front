@@ -25,11 +25,11 @@ const routes: Routes = [
         loadComponent: () => import('./projet/productivity/productivity.component').then(m => m.ProductivityComponent)
 
       },
-      {
-        path: 'ContactReason',
-        loadComponent: () => import('./projet/contact-reason/contact-reason.component').then(m => m.ContactReasonComponent)
-
-      },
+      // {
+      //   path: 'ContactReason',
+      //   loadComponent: () => import('./projet/contact-reason/contact-reason.component').then(m => m.ContactReasonComponent)
+      //
+      // },
       {
         path: 'analytics',
         loadComponent: () => import('./projet/dashboard/dash-analytics.component')
